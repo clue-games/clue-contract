@@ -1,0 +1,27 @@
+{
+  "name": "clue-contract",
+  "version": "1.0.0",
+  "description": "CLUE",
+  "main": "tronbox.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tronbox test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clue-games/clue-contract.git"
+  },
+  "author": "tpae",
+  "bugs": {
+    "url": "https://github.com/clue-games/clue-contract/issues"
+  },
+  "homepage": "https://github.com/clue-games/clue-contract#readme",
+  "devDependencies": {
+    "tronbox": "^2.3.1"
+  },
+  "dependencies": {
+    "openzeppelin-solidity": "^2.0.0"
+  }
+}
