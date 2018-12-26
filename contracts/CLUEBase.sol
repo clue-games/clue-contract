@@ -18,7 +18,7 @@ contract CLUEBase {
   event Creation(address indexed creator, uint256 clueId, address indexed bounty, string message);
 
   // Claim event. emitted when CLUE is claimed
-  event Claim(address indexed bounty, string message, bool claimed);
+  event Claim(address indexed bounty, string message, bool claimed, address indexed claimer);
 
   /**
    * main CLUE struct
@@ -35,6 +35,9 @@ contract CLUEBase {
 
     // Claimed
     bool claimed;
+
+    // claimer's address
+    address claimer;
   }
 
   // storage for the CLUEs. CLUEIds are represented by the indices
@@ -53,7 +56,8 @@ contract CLUEBase {
         creator: _creator,
         bounty: _bounty,
         message: _message,
-        claimed: false
+        claimed: false,
+        claimer: address(0)
     });
 
     // store CLUE to memory
@@ -70,7 +74,7 @@ contract CLUEBase {
    * @dev: This is an internal method for claiming the CLUE
    * @param _clueId
    */
-  function _claimCLUE(uint256 _clueId) internal returns (bool) {
+  function _claimCLUE(uint256 _clueId, address _claimer) internal returns (bool) {
     CLUE storage clue = clues[_clueId];
 
     // you can only claim a CLUE if your address matches the bounty address
@@ -82,7 +86,10 @@ contract CLUEBase {
     // set CLUE as claimed
     clue.claimed = true;
 
+    // set claimer by address
+    clue.claimer = _claimer;
+
     // emit claim event
-    Claim(address(clue.bounty), string(clue.message), bool(clue.claimed));
+    Claim(address(clue.bounty), string(clue.message), bool(clue.claimed), address(clue.claimer));
   }
 }
