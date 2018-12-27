@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/clue-games/clue-contract#readme",
   "devDependencies": {
+    "chalk": "^2.4.1",
+    "sleep": "^5.2.3",
     "tronbox": "^2.3.1"
   },
   "dependencies": {

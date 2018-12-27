@@ -1,13 +1,19 @@
 pragma solidity ^0.4.23;
 
-import 'openzeppelin-solidity/contracts/ownership/Ownable.sol';
 import './CLUEBase.sol';
 
-contract CLUECore is CLUEBase, Ownable {
+contract CLUECore is CLUEBase {
   // Set in case the core contract is broken and an upgrade is required
   address public newContractAddress;
 
-  function CLUECore() public {
+  address owner;
 
+  constructor() public {
+    owner = msg.sender;
   }
+
+  function getOwner() public view returns(address) {
+    return owner;
+  }
+
 }

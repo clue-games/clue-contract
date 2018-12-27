@@ -1,5 +1,5 @@
-// var MyContract = artifacts.require("./MyContract.sol");
+var CLUECore = artifacts.require('./CLUECore.sol')
 
-module.exports = function(deployer) {
-  // deployer.deploy(MyContract);
-};
+module.exports = function (deployer) {
+  deployer.deploy(CLUECore)
+}

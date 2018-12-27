@@ -1,19 +1,16 @@
 /**
  * Created on 2018-12-16 23:14
- * @summary: 
- * @author: tpae
  */
 pragma solidity ^0.4.23;
 
 /**
- * Created on 2018-12-16 22:43
- * @summary: CLUEBase for the common functionalities.
- * @author: tpae
+ *
  */
 contract CLUEBase {
   /**
    * Events
    */
+
   // Creation event. emitted when CLUE is first created
   event Creation(address indexed creator, uint256 clueId, address indexed bounty, string message);
 
@@ -44,13 +41,9 @@ contract CLUEBase {
   CLUE[] clues;
   
   /**
-   * @dev: This is an internal method for generating new CLUEs. This doesn't have any validation, should be used with caution
-   * @param _bounty
-   * @param _message
-   * @param _creator
-   * @return uinit
+   * This is an internal method for generating new CLUEs. This doesn't have any validation, should be used with caution
    */
-  function _createCLUE(address _bounty, string _message, address _creator) internal returns (uinit) {
+  function _createCLUE(address _bounty, string _message, address _creator) internal returns (uint) {
     // create new CLUE, and store in memory
     CLUE memory _clue = CLUE({
         creator: _creator,
@@ -64,15 +57,14 @@ contract CLUEBase {
     uint256 clueId = clues.push(_clue) - 1;
 
     // emit creation event
-    Creation(_creator, clueId, _bounty, _message);
+    emit Creation(_creator, clueId, _bounty, _message);
 
     // return CLUEId
     return clueId;
   }
 
   /**
-   * @dev: This is an internal method for claiming the CLUE
-   * @param _clueId
+   * This is an internal method for claiming the CLUE
    */
   function _claimCLUE(uint256 _clueId, address _claimer) internal returns (bool) {
     CLUE storage clue = clues[_clueId];
@@ -90,6 +82,6 @@ contract CLUEBase {
     clue.claimer = _claimer;
 
     // emit claim event
-    Claim(address(clue.bounty), string(clue.message), bool(clue.claimed), address(clue.claimer));
+    emit Claim(address(clue.bounty), string(clue.message), bool(clue.claimed), address(clue.claimer));
   }
 }
