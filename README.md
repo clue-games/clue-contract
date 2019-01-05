@@ -1,5 +1,4 @@
 # CLUE: Decentralized Reward Unlocking Platform
-tags: #clue #whitepaper
 
 ## Abstract
 CLUE is a TRON-based decentralized reward unlocking platform, using smart contracts and modern cryptography. CLUE allows monetary rewards to be stored in a disposable wallet and can be claimed using an unlocking code comprised of CLUE ID and the private key of the wallet.
@@ -77,7 +76,7 @@ For the users on the DApp, the basic security model provided by application fram
 ### Use Common Lingos
 From an average user’s perspective, some of the DApp lingos can be difficult to understand, and as humans, lack of understanding leads to lack of confidence.
 
-For example, “Create a new Wallet” can also be described as, “Create an Account” which will help users make straightforward decisions on getting started.
+For example, "Create a new Wallet" can also be described as, "Create an Account" which will help users make straightforward decisions on getting started.
 
 ### Features
   - TRX Wallet (send and receive TRX)
