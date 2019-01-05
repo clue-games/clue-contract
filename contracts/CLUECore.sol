@@ -16,4 +16,12 @@ contract CLUECore is CLUEBase {
     return owner;
   }
 
+  function createCLUE(address _bounty, string _message, address _creator) public view returns(uint) {
+    return _createCLUE(_bounty, _message, _creator);
+  }
+
+  function claimCLUE(uint256 _clueId, address _claimer) public view returns(bool) {
+    return _claimCLUE(_clueId, _claimer);
+  }
+
 }

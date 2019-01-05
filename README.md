@@ -7,7 +7,8 @@ CLUE is a TRON-based decentralized reward unlocking platform, using smart contra
 ## CLUE Architecture
 CLUE uses a unique method to store the reward in a disposable wallet, and use the wallet to generate a public key encrypted message.
 
-[Creation of the CLUE diagram]
+![](docs/images/Create CLUE.png)
+
 *Figure 1* - Creating a CLUE
 
 Upon creation of the CLUE, the unlocking code generated contains the following information:
@@ -19,9 +20,10 @@ The unlocking code contains all of the necessary information to unlock the CLUE.
 
 After CLUE is created, the creator will be able to generate either a QR Code or use our Unlocking API, which uses app links for instant unlocking.
 
-The reward amount can be determined by checking the balance of the address on the disposable wallet. 
+The reward amount can be determined by checking the balance of the address on the disposable wallet.
 
-[Claim CLUE diagram]
+![](docs/images/Claim CLUE.png)
+
 *Figure 2* - Claiming a CLUE
 
 Once the claimer gains access to the disposable wallet, the claimer can not only withdraw funds but also mark the CLUE as claimed, using  `msg.sender` to verify as the winner. The claimer’s address can be sent to the contract, allowing the claimer to record their address on the CLUE.
@@ -61,7 +63,7 @@ Interacting with DApps require having a wallet and basic understanding of how to
 
 The barrier is pretty high considering there are several pre-requisite steps before interacting with DApps.
 
-Instead of requiring a wallet, DApps should generate a new wallet as part of the sign-up process. 
+Instead of requiring a wallet, DApps should generate a new wallet as part of the sign-up process.
 
 Having a wallet inside of the DApp will greatly lower the barrier, reducing the additional steps to get started by several factors.
 
@@ -73,7 +75,7 @@ From a user’s perspective, it is reasonable to assume that their primary accou
 For the users on the DApp, the basic security model provided by application frameworks should be more than enough, and we should always encourage users to make frequent withdrawals.
 
 ### Use Common Lingos
-From an average user’s perspective, some of the DApp lingos can be difficult to understand, and as humans, lack of understanding leads to lack of confidence. 
+From an average user’s perspective, some of the DApp lingos can be difficult to understand, and as humans, lack of understanding leads to lack of confidence.
 
 For example, “Create a new Wallet” can also be described as, “Create an Account” which will help users make straightforward decisions on getting started.
 
