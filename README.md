@@ -7,7 +7,7 @@ CLUE is a TRON-based decentralized reward unlocking platform, using smart contra
 ## CLUE Architecture
 CLUE uses a unique method to store the reward in a disposable wallet, and use the wallet to generate a public key encrypted message.
 
-![](docs/images/Create CLUE.png)
+![](docs/images/create.png)
 
 *Figure 1* - Creating a CLUE
 
@@ -22,7 +22,7 @@ After CLUE is created, the creator will be able to generate either a QR Code or 
 
 The reward amount can be determined by checking the balance of the address on the disposable wallet.
 
-![](docs/images/Claim CLUE.png)
+![](docs/images/claim.png)
 
 *Figure 2* - Claiming a CLUE
 
